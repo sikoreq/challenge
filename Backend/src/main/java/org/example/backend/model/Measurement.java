@@ -17,7 +17,7 @@ public class Measurement {
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @Column(name = "city_id", nullable = false)
+    @JoinColumn(name = "city_id", nullable = false)
     private City city;
 
     @Column(name = "date", nullable = false)

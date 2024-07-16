@@ -1,11 +1,21 @@
 version: '3'
 
 services:
+
+  backend:
+    container_name: backend
+    build:
+      context: Backend
+    ports:
+      - 8080:8080
+
   db:
     image: postgres
     restart: always
     # set shared memory limit when using docker-compose
     shm_size: 128mb
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/1-schema.sql
     environment:
       POSTGRES_PASSWORD: example
     ports:

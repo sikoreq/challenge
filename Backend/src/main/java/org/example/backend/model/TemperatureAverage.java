@@ -3,7 +3,6 @@ package org.example.backend.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.example.backend.model.City;
 
 import java.math.BigDecimal;
 
@@ -26,5 +25,8 @@ public class TemperatureAverage {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "city_id", nullable = false)
     private City city;
+
+    @Column(name = "year", nullable = false)
+    private Integer year;
 
 }

@@ -25,3 +25,6 @@ CREATE INDEX measurement_city_id_idx ON public.measurement (city_id);
 CREATE INDEX measurement_date_idx ON public.measurement ("date");
 CREATE INDEX measurement_city_id_date_idx ON public.measurement (city_id,"date");
 
+ALTER TABLE public.temperature_average ADD "year" int4 NOT NULL;
+
+

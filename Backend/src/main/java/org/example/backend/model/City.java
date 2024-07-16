@@ -4,9 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 @Getter
 @Setter
 @Entity
@@ -19,11 +16,5 @@ public class City {
 
     @Column(name = "name", nullable = false)
     private String name;
-
-    @OneToMany(mappedBy = "city")
-    private Set<TemperatureAverage> temperatureAverages = new LinkedHashSet<>();
-
-    @OneToMany(mappedBy = "city")
-    private Set<Measurement> measurements = new LinkedHashSet<>();
 
 }
